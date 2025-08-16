@@ -125,6 +125,5 @@ function returnRandomItem(arr) {
 
 function filterArr(arr, lang) {
   let newArr = arr.filter(element => element.lang === lang)
-  console.log(newArr)
   return newArr
 }
