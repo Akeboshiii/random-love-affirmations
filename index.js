@@ -90,10 +90,16 @@ const affirmations = [
 
 
 app.get('/', (req, res) => {
-    res.status(200).json('')
+    res.status(200).json(affirmations[returnRandomItem(affirmations)])
 })
 
 
 app.listen(port, () => {
     console.log(`listening on port ${port}!`)
 })
+
+function returnRandomItem(arr) {
+  const len = arr.length
+  const randomIndex = Math.floor(Math.random() * len)
+  return randomIndex
+}
