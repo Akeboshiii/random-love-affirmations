@@ -1,0 +1,23 @@
+{
+  "name": "random-affirmations",
+  "version": "1.0.0",
+  "description": "api that sends random affirmations (tagalog, bisaya, or english)",
+  "keywords": [
+    "data",
+    "api",
+    "api",
+    "affirmations",
+    "love"
+  ],
+  "license": "ISC",
+  "author": "akeboshiii",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
