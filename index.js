@@ -90,12 +90,26 @@ const affirmations = [
 
 
 app.get('/api', (req, res) => {
-  res.status(200).json(affirmations[returnRandomItem(affirmations)])
+  const randomIndex = returnRandomItem(affirmations)
+  res.status(200).json(affirmations[randomIndex])
 })
 
 app.get('/api/english', (req, res) => {
-  
-  res.status(200).json()
+  const englishArr = filterArr(affirmations, 'English')
+  const randomIndex = englishArr.length
+  res.status(200).json(englishArr[randomIndex])
+})
+
+app.get('/api/ilonggo', (req, res) => {
+  const ilonggoArr = filterArr(affirmations, 'Ilonggo')
+  const randomIndex = ilonggoArr.length
+  res.status(200).json(ilonggoArr[randomIndex])
+})
+
+app.get('/api/bisaya', (req, res) => {
+  const bisayaArr = filterArr(affirmations, 'Bisaya')
+  const randomIndex = bisayaArr.length
+  res.status(200).json(bisayaArr[randomIndex])
 })
 
 
