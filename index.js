@@ -1,4 +1,6 @@
 import express from 'express'
+import fs from 'fs/promises'
+import path from 'path'
 const app = express()
 const port = 3000
 
@@ -87,6 +89,10 @@ const affirmations = [
   { "lang": "ilonggo", "affirmation": "Ikaw ang emoji nga permi ko ginagamit sa akon kabuhi." },
   { "lang": "ilonggo", "affirmation": "Kung taxi ka, indi ko gid pagpa-‘meter off’." }
 ]
+
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.join(process.cwd(), "index.html"))
+})
 
 app.get('/api', (req, res) => {
   const { lang } = req.query
