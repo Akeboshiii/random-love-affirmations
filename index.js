@@ -89,8 +89,13 @@ const affirmations = [
 ]
 
 
-app.get('/', (req, res) => {
-    res.status(200).json(affirmations[returnRandomItem(affirmations)])
+app.get('/api', (req, res) => {
+  res.status(200).json(affirmations[returnRandomItem(affirmations)])
+})
+
+app.get('/api/english', (req, res) => {
+  
+  res.status(200).json()
 })
 
 
@@ -100,6 +105,11 @@ app.listen(port, () => {
 
 function returnRandomItem(arr) {
   const len = arr.length
-  const randomIndex = Math.floor(Math.random() * len)
-  return randomIndex
+  return randomIndex = Math.floor(Math.random() * len)
+}
+
+function filterArr(arr, lang) {
+  return newArr = arr.filter((element) => {
+    return (element.lang === lang) ? true : false
+  })
 }
