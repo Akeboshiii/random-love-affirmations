@@ -96,19 +96,19 @@ app.get('/api', (req, res) => {
 
 app.get('/api/english', (req, res) => {
   const englishArr = filterArr(affirmations, 'English')
-  const randomIndex = englishArr.length
+  const randomIndex = returnRandomItem(englishArr)
   res.status(200).json(englishArr[randomIndex])
 })
 
 app.get('/api/ilonggo', (req, res) => {
   const ilonggoArr = filterArr(affirmations, 'Ilonggo')
-  const randomIndex = ilonggoArr.length
+  const randomIndex = returnRandomItem(ilonggoArr)
   res.status(200).json(ilonggoArr[randomIndex])
 })
 
 app.get('/api/bisaya', (req, res) => {
   const bisayaArr = filterArr(affirmations, 'Bisaya')
-  const randomIndex = bisayaArr.length
+  const randomIndex = returnRandomItem(bisayaArr)
   res.status(200).json(bisayaArr[randomIndex])
 })
 
@@ -119,11 +119,11 @@ app.listen(port, () => {
 
 function returnRandomItem(arr) {
   const len = arr.length
-  return randomIndex = Math.floor(Math.random() * len)
+  let randomIndex = Math.floor(Math.random() * len)
+  return randomIndex
 }
 
 function filterArr(arr, lang) {
-  return newArr = arr.filter((element) => {
-    return (element.lang === lang) ? true : false
-  })
+  let newArr = arr.filter(element => element.lang === "lang")
+  return newArr
 }
