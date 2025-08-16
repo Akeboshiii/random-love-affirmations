@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            padding-inline: 50px;
+        }
+
+        h1, .credit {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random affirmations API(beta)</h1>
+    <p class="credit">made by <a href="http://github.com/Akeboshiii" target="_blank" rel="noopener noreferrer">akeb</a> kay natuyo siya</p>
+    <p class="credit">open source man, ara di ang <a href="http://" target="_blank" rel="noopener noreferrer">repo</a></p>
+    <p class="credit">sensya na kay nasanay bi ko mag ilonggo</p>
+    <hr>
+
+    <h2>Routes:</h2>
+    <b><a href="/api" target="_blank" rel="noopener noreferrer">/api</a></b>
+    <p>returns a random affirmation</p>
+    <hr>
+
+    <h2>Query:</h2>
+    <b>?lang</b>
+    <p>returns a random affirmation for every language/dialect (only bisaya, english, filipino, and ilonggo are available)</p>
+    <select name="lang" id="lang">
+        <option value="english">english</option>
+        <option value="ilonggo">ilonggo</option>
+        <option value="bisaya">bisaya</option>
+        <option value="filipino">filipino</option>
+    </select>
+    <br>
+    <b><a id="apiLink" href="/api?lang=english" target="_blank" rel="noopener noreferrer">/api?lang=english</a></b>
+    <hr>
+
+    <h2>How to Use:</h2>
+    <p>pag tuon anay sang imo da kay natamad pa ko maghimo sang tutorial</p>
+    <p>hint: use the link address to the js fetch api, sala mo na na kung way ka nabal an sa js async or promise</p>
+</body>
+<script>
+    let link = document.querySelector('#apiLink')
+    let selection = document.querySelector('#lang')
+
+    selection.addEventListener('change', () => {
+        if (selection.value) {
+            link.textContent = `/api?lang=${selection.value}`
+            link.setAttribute("href", `/api?lang=${selection.value}`)
+        }
+    })
+
+</script>
+</html>
