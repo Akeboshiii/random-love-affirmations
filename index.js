@@ -100,6 +100,10 @@ app.get('/api', (req, res) => {
   res.status(200).json(arr[randomIndex])
 })
 
+app.get('*', (req, res) => {
+  res.status(404).json({'error': 'not found'})
+})
+
 app.listen(port, () => {
     console.log(`listening on port ${port}!`)
 })
